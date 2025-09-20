@@ -43,7 +43,9 @@ Better ASCII art banner and instructions
 
 # Usage Examples:
 bash
+
 Basic usage:
+
 python Auto-Clicker.py
 
 # Ex: For 100 clicks per second:
