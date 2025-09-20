@@ -44,11 +44,12 @@ Better ASCII art banner and instructions
 # Usage Examples:
 bash
 => Basic usage:
+
 python Auto-Clicker.py
-
 => Ex: For 100 clicks per second:
-python Auto-Clicker.py --cps 100
 
+python Auto-Clicker.py --cps 100
 => Right-click with custom delay:
+
 python Auto-Clicker.py --delay 0.05 --button right
 This Auto-Clicker is the combination of professional-grade features, error handling, and user experience improvements.
