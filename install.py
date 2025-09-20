@@ -14,7 +14,7 @@ def parse_args():
 
 def clean_virtualenv(venv_dir):
     if os.path.exists(venv_dir):
-        print(f"🧹 Removing existing virtual environment at {venv_dir}")
+        print(f"# Removing existing virtual environment at {venv_dir}")
         shutil.rmtree(venv_dir)
 
 def is_venv_broken(venv_dir):
@@ -23,7 +23,7 @@ def is_venv_broken(venv_dir):
 
 def create_virtualenv(venv_dir):
     subprocess.check_call([sys.executable, "-m", "venv", venv_dir])
-    print(f"✅ Created virtual environment at {venv_dir}")
+    print(f"# Created virtual environment at {venv_dir}")
     hide_venv_folder(venv_dir)
 
 def get_venv_executable(venv_dir, executable):
@@ -34,16 +34,16 @@ def get_venv_executable(venv_dir, executable):
 def install_requirements(venv_dir, req_file, upgrade_pip):
     pip_path = get_venv_executable(venv_dir, "pip")
     if not os.path.exists(req_file):
-        print(f"❌ {req_file} not found.")
+        print(f"# {req_file} not found.")
         sys.exit(1)
     try:
         if upgrade_pip:
             subprocess.check_call([pip_path, "install", "--upgrade", "pip"])
-            print("⬆️ Upgraded pip")
+            print("# Upgraded pip")
         subprocess.check_call([pip_path, "install", "-r", req_file])
-        print(f"✅ Installed packages from {req_file}")
+        print(f"# Installed packages from {req_file}")
     except subprocess.CalledProcessError as e:
-        print(f"❌ pip install failed with exit code {e.returncode}")
+        print(f"# pip install failed with exit code {e.returncode}")
         sys.exit(e.returncode)
 
 def hide_venv_folder(venv_dir):
@@ -53,11 +53,11 @@ def hide_venv_folder(venv_dir):
             try:
                 result = subprocess.run(["attrib", "+h", abs_path], capture_output=True, text=True)
                 if result.returncode == 0:
-                    print(f"🙈 Successfully hid {abs_path}")
+                    print(f"# Successfully hid {abs_path}")
                 else:
-                    print(f"⚠️ Failed to hide {abs_path}\n{result.stderr}")
+                    print(f"# Failed to hide {abs_path}\n{result.stderr}")
             except Exception as e:
-                print(f"❌ Error hiding {abs_path}: {e}")
+                print(f"# Error hiding {abs_path}: {e}")
 
 def main():
     args = parse_args()
@@ -72,7 +72,7 @@ def main():
 
     install_requirements(venv_dir, req_file, args.upgrade_pip)
 
-    print("\n🚀 Done. To activate the virtual environment:")
+    print("\n# Done. To activate the virtual environment:")
     if os.name == "nt":
         print(f"   {venv_dir}\\Scripts\\activate")
     else:
