@@ -12,15 +12,15 @@ Professional OOP structure for better maintainability.
 
 🎮 Multiple hotkeys:
 
-1 - Start/Stop clicking
+[1] - Start/Stop clicking
 
-2 - Pause/Resume
+[2] - Pause/Resume
 
-3 - Show statistics
+[3] - Show statistics
 
-0 - Exit program
+[0] - Exit program
 
-Esc - Emergency stop
+[Esc] - Emergency stop
 
 ⚙️ Command-line options:
 
