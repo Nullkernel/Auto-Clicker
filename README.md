@@ -46,7 +46,7 @@ bash
 # Basic usage:
 python Auto-Clicker.py
 
-# 100 clicks per second:
+# Ex: For 100 clicks per second:
 python Auto-Clicker.py --cps 100
 
 # Right-click with custom delay:
