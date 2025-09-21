@@ -24,35 +24,38 @@ Professional OOP structure for better maintainability.
 
 ⚙️ Command-line options:
 
---delay or -d: Set delay between clicks
+--delay or -d: Set delay between clicks.
 
---cps or -c: Set clicks per second
+--cps or -c: Set clicks per second.
 
---button or -b: Choose mouse button (left/right/middle)
+--button or -b: Choose mouse button (left/right/middle).
 
 # Safety & Usability:
-Minimum delay protection (0.001s) to prevent system overload
+Minimum delay protection (0.001s) to prevent system overload.
 
-Visual progress indicators showing click counts
+Visual progress indicators showing click counts.
 
-Professional UI with emojis and clear status messages
+Professional UI with emojis and clear status messages.
 
-Graceful shutdown with proper cleanup
+Graceful shutdown with proper cleanup.
 
-Better ASCII art banner and instructions
+Better ASCII art banner and instructions.
 
 # Usage Examples:
-bash
 
-=> Basic usage:
-
+## Basic usage:
+```bash
 python Auto-Clicker.py
+```
 
-=> Ex: For 100 clicks per second:
-
+## Ex: For 100 clicks per second:
+```bash
 python Auto-Clicker.py --cps 100
+```
 
-=> Right-click with custom delay:
-
+## Right-click with custom delay:
+```bash
 python Auto-Clicker.py --delay 0.05 --button right
+```
+
 This Auto-Clicker is the combination of professional-grade features, error handling, and user experience improvements.
