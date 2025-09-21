@@ -43,6 +43,11 @@ Better ASCII art banner and instructions.
 
 # Usage Examples:
 
+## Install Dependencies:
+```bash
+python install.py
+```
+
 ## Basic usage:
 ```bash
 python Auto-Clicker.py
