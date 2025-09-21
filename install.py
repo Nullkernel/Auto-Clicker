@@ -5,16 +5,16 @@ import shutil
 import argparse
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Install Python requirements in a virtual environment")
+    parser = argparse.ArgumentParser(description="Install Python requirements in a virtual environment.")
     parser.add_argument("--venv-dir", default=".venv", help="Virtual environment directory")
     parser.add_argument("--req-file", default="requirements.txt", help="Requirements file")
-    parser.add_argument("--clean", action="store_true", help="Delete and recreate the virtual environment")
-    parser.add_argument("--upgrade-pip", action="store_true", help="Upgrade pip in the virtual environment")
+    parser.add_argument("--clean", action="store_true", help="Delete and recreate the virtual environment.")
+    parser.add_argument("--upgrade-pip", action="store_true", help="Upgrade pip in the virtual environment.")
     return parser.parse_args()
 
 def clean_virtualenv(venv_dir):
     if os.path.exists(venv_dir):
-        print(f"# Removing existing virtual environment at {venv_dir}")
+        print(f"# Removing existing virtual environment at: {venv_dir}")
         shutil.rmtree(venv_dir)
 
 def is_venv_broken(venv_dir):
@@ -23,7 +23,7 @@ def is_venv_broken(venv_dir):
 
 def create_virtualenv(venv_dir):
     subprocess.check_call([sys.executable, "-m", "venv", venv_dir])
-    print(f"# Created virtual environment at {venv_dir}")
+    print(f"# Created virtual environment at: {venv_dir}")
     hide_venv_folder(venv_dir)
 
 def get_venv_executable(venv_dir, executable):
@@ -39,9 +39,9 @@ def install_requirements(venv_dir, req_file, upgrade_pip):
     try:
         if upgrade_pip:
             subprocess.check_call([pip_path, "install", "--upgrade", "pip"])
-            print("# Upgraded pip")
+            print("# Upgraded pip.")
         subprocess.check_call([pip_path, "install", "-r", req_file])
-        print(f"# Installed packages from {req_file}")
+        print(f"# Installed packages from: {req_file}")
     except subprocess.CalledProcessError as e:
         print(f"# pip install failed with exit code {e.returncode}")
         sys.exit(e.returncode)
@@ -53,11 +53,11 @@ def hide_venv_folder(venv_dir):
             try:
                 result = subprocess.run(["attrib", "+h", abs_path], capture_output=True, text=True)
                 if result.returncode == 0:
-                    print(f"# Successfully hid {abs_path}")
+                    print(f"# Successfully hid: {abs_path}")
                 else:
-                    print(f"# Failed to hide {abs_path}\n{result.stderr}")
+                    print(f"# Failed to hide: {abs_path}\n{result.stderr}")
             except Exception as e:
-                print(f"# Error hiding {abs_path}: {e}")
+                print(f"# Error hiding: {abs_path}: {e}")
 
 def main():
     args = parse_args()
@@ -80,3 +80,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
