@@ -1,5 +1,5 @@
-
 #!/usr/bin/env python3
+
 """
 Enhanced Auto-Clicker v1.0
 A feature-rich auto-clicker with customizable settings and improved user interface.
@@ -133,11 +133,10 @@ class AutoClicker:
                 try:
                     self.mouse.click(self.button)
                     self.click_count += 1
-
-                    # Show progress every 100 clicks
-                    if self.click_count % 100 == 0:
-                        print(f"# Clicks: {self.click_count:,}")
-
+                
+                    # Removed progress printing to prevent CLI pausing.
+                    # Progress can be checked using the '3' key for statistics.
+                    
                     time.sleep(self.delay)
                 except Exception as e:
                     print(f"# Error during clicking: {e}")
