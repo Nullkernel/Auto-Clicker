@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Enhanced Auto-Clicker v1.0
+AutoTap v1.0
 A feature-rich auto-clicker with customizable settings and improved user interface.
 """
 
@@ -20,7 +20,7 @@ class AutoClicker:
     def __init__(self, delay: float = 0.1, button: Button = Button.left, 
                  clicks_per_second: Optional[float] = None):
         """
-        Initialize the AutoClicker.
+        Initialize the Auto-Clicker.
 
         Args:
             delay: Delay between clicks in seconds
@@ -58,12 +58,12 @@ class AutoClicker:
         """Print the application banner."""
         banner = """
 
-░█████╗░██╗░░░██╗████████╗░█████╗░░░░░░░░█████╗░██╗░░░░░██╗░█████╗░██╗░░██╗███████╗██████╗░
-██╔══██╗██║░░░██║╚══██╔══╝██╔══██╗░░░░░░██╔══██╗██║░░░░░██║██╔══██╗██║░██╔╝██╔════╝██╔══██╗
-███████║██║░░░██║░░░██║░░░██║░░██║█████╗██║░░╚═╝██║░░░░░██║██║░░╚═╝█████═╝░█████╗░░██████╔╝
-██╔══██║██║░░░██║░░░██║░░░██║░░██║╚════╝██║░░██╗██║░░░░░██║██║░░██╗██╔═██╗░██╔══╝░░██╔══██╗
-██║░░██║╚██████╔╝░░░██║░░░╚█████╔╝░░░░░░╚█████╔╝███████╗██║╚█████╔╝██║░╚██╗███████╗██║░░██║
-╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░░╚════╝░░░░░░░░╚════╝░╚══════╝╚═╝░╚════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝
+░█████╗░██╗░░░██╗████████╗░█████╗░████████╗░█████╗░██████╗░
+██╔══██╗██║░░░██║╚══██╔══╝██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗
+███████║██║░░░██║░░░██║░░░██║░░██║░░░██║░░░███████║██████╔╝
+██╔══██║██║░░░██║░░░██║░░░██║░░██║░░░██║░░░██╔══██║██╔═══╝░
+██║░░██║╚██████╔╝░░░██║░░░╚█████╔╝░░░██║░░░██║░░██║██║░░░░░
+╚═╝░░╚═╝░╚═════╝░░░░╚═╝░░░░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░░░░
         """
         print(banner)
 
@@ -91,7 +91,7 @@ class AutoClicker:
             if not self.running:
                 self.running = True
                 self.start_time = time.time()
-                print("Auto-clicker STARTED!")
+                print("Auto-Clicker STARTED!")
 
                 if self.click_thread is None or not self.click_thread.is_alive():
                     self.click_thread = threading.Thread(target=self._click_loop, daemon=True)
@@ -102,7 +102,7 @@ class AutoClicker:
         with self.lock:
             if self.running:
                 self.running = False
-                print("Auto-clicker STOPPED.")
+                print("Auto-Clicker STOPPED.")
 
     def toggle_clicking(self):
         """Toggle the clicking state."""

@@ -1,4 +1,4 @@
-🚀 Auto-Clicker Features:
+🚀 AutoTap (Auto-Clicker) Features:
 
 # Features:
 
@@ -45,22 +45,22 @@ Better ASCII art banner and instructions.
 
 ## Install Dependencies:
 ```bash
-python install.py
+pip install pynput
 ```
 
 ## Basic usage:
 ```bash
-python Auto-Clicker.py
+python AutoTap.py
 ```
 
 ## Ex: For 100 clicks per second:
 ```bash
-python Auto-Clicker.py --cps 100
+python AutoTap.py --cps 100
 ```
 
 ## Right-click with custom delay:
 ```bash
-python Auto-Clicker.py --delay 0.05 --button right
+python AutoTap.py --delay 0.05 --button right
 ```
 
 This Auto-Clicker is the combination of professional-grade features, error handling, and user experience improvements.
