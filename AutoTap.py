@@ -91,7 +91,7 @@ class AutoClicker:
             if not self.running:
                 self.running = True
                 self.start_time = time.time()
-                print("Auto-Clicker STARTED!")
+                print("# Auto-Clicker STARTED!")
 
                 if self.click_thread is None or not self.click_thread.is_alive():
                     self.click_thread = threading.Thread(target=self._click_loop, daemon=True)
@@ -102,7 +102,7 @@ class AutoClicker:
         with self.lock:
             if self.running:
                 self.running = False
-                print("Auto-Clicker STOPPED.")
+                print("# Auto-Clicker STOPPED.")
 
     def toggle_clicking(self):
         """Toggle the clicking state."""
@@ -194,7 +194,7 @@ class AutoClicker:
 
 def parse_arguments():
     """Parse command line arguments."""
-    parser = argparse.ArgumentParser(description='Enhanced Auto-Clicker v2.0')
+    parser = argparse.ArgumentParser(description='AutoTap v1.0')
     parser.add_argument('--delay', '-d', type=float, default=0.1,
                        help='Delay between clicks in seconds (default: 0.1)')
     parser.add_argument('--cps', '-c', type=float,
